@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Галерея</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/seal (2).png" width="64" height="64" alt="Logo">
+                <a class="brand">Evergatis</a>
+            </div>
+
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+
+            <nav class="nav-menu">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="survey.html">Submit a Photo</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About us</a>
+                        <ul class="dropdown-content">
+                            <li>Email: info@evergatis.com</li>
+                            <li>Phone: +123 456 789</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." id="searchInput">
+                <button type="submit">Search</button>
+            </div>
+
+            <label for="modal-toggle" class="minimal-btn">Sign in</label>
+            <input type="checkbox" id="modal-toggle" class="modal-toggle">
+
+            <div class="modal">
+                <div class="modal-content">
+                    <label for="modal-toggle" class="close">&times;</label>
+                    <form id="authForm">
+                        <h2>Sign In</h2>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>Our Art Collection</h1>
+            <p>Explore a curated selection of visual masterpieces</p>
+        </div>
+    </section>
+    
+    <section id="gallery" class="gallery-section">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide container-fluid p-0" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="images/gallery/DO_WestPoint_Island_21A7246_DavidMerron.jpg" class="d-block w-100" alt="Artwork 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>A burst of color at West Point Island in the Falklands</h5>
+                        <p>David Merron</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/gallery/DO_Grytviken-SG_21A0236_DavidMerron.jpg" class="d-block w-100" alt="Artwork 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Grytviken</h5>
+                        <p>David Merron</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/gallery/DO_Elephant-Seal-Pup_Gold-Harbour_SG_21A1119_DavidMerron.jpg" class="d-block w-100" alt="Artwork 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Elephant seal pups congregate</h5>
+                        <p>David Merron</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="container">
+            <div class="logo1"></div>
+                <img src="images\seal (1).png" width="64" height="64" alt="Logo">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: info@evergatis.com | Phone: +123 456 789</p>
+            </div>
+            <div class="footer-section">
+                <h4>ous social medias</h4>
+                <ul class="social-links">
+                    <li><a href="www.facebook.com">Facebook</a></li>
+                    <li><a href="www.instagram.com">Instagram</a></li>
+                    <li><a href="www.tiktok.com">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="arrow-up" id="arrowUp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2l-10 10h6v10h8v-10h6z" />
+        </svg>
+    </a>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+            const arrowUp = document.querySelector('.arrow-up');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                arrowUp.style.display = "flex";
+            } else {
+                arrowUp.style.display = "none";
+            }
+        }
+        document.getElementById('arrowUp').addEventListener('click', function(event) {
+            event.preventDefault();
+    
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>

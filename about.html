@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Evergatis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/seal (2).png" width="64" height="64" alt="Logo">
+                <a class="brand">Evergatis</a>
+            </div>
+
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+
+            <nav class="nav-menu">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="survey.html">Submit a Photo</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About us</a>
+                        <ul class="dropdown-content">
+                            <li>Email: info@evergatis.com</li>
+                            <li>Phone: +123 456 789</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." id="searchInput">
+                <button type="submit">Search</button>
+            </div>
+
+            <label for="modal-toggle" class="minimal-btn">Sign in</label>
+            <input type="checkbox" id="modal-toggle" class="modal-toggle">
+
+            <div class="modal">
+                <div class="modal-content">
+                    <label for="modal-toggle" class="close">&times;</label>
+                    <form id="authForm">
+                        <h2>Sign In</h2>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="about-hero">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Learn more about Evergatis and our mission.</p>
+        </div>
+    </section>
+
+    <section class="about-team">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>
+                At Evergatis, we are committed to making a positive impact on the planet by promoting environmental
+                conservation and sustainable practices.
+                Our goal is to inspire communities worldwide to take action for a greener future.
+            </p>
+
+            <h2>Our Team</h2>
+            <p>
+                Our dedicated team consists of passionate individuals who are driven to create change. From
+                environmental scientists to creative artists, we bring together a diverse set of skills to achieve our
+                mission.
+            </p>
+        </div>
+
+    </section>
+
+    <section id="feedback">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="feedback-container">
+                <div class="feedback-item">
+                    <p>"This website has changed my life! The design is clean and easy to use."</p>
+                    <h4>- Alex Johnson</h4>
+                </div>
+                <div class="feedback-item">
+                    <p>"I always find what I need here. Great customer service and quick responses!"</p>
+                    <h4>- Maria Smith</h4>
+                </div>
+                <div class="feedback-item">
+                    <p>"The best experience I've ever had. Highly recommend this site to everyone."</p>
+                    <h4>- John Doe</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo1"></div>
+            <img src="images/seal (1).png" width="64" height="64" alt="Logo">
+            <div class="footer-section" id="contact">
+                <h4>Contact Us</h4>
+                <p>Email: info@evergatis.com | Phone: +123 456 789</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us on Social Media</h4>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="arrow-up" id="arrowUp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2l-10 10h6v10h8v-10h6z" />
+        </svg>
+    </a>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+            const arrowUp = document.querySelector('.arrow-up');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                arrowUp.style.display = "flex";
+            } else {
+                arrowUp.style.display = "none";
+            }
+        }
+        document.getElementById('arrowUp').addEventListener('click', function(event) {
+            event.preventDefault();
+    
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
